@@ -1,0 +1,1 @@
+export type PublicTransitMode = "U-Bahn" | "S-Bahn" ;
