@@ -87,13 +87,11 @@ The exact structure will evolve as the GraphQL API and web interface are introdu
 ### Installation
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:Shushovan015/Berlin-Transit-live.git
 cd berlin-transit-live
 npm install
 npm run dev
 ```
-
-Replace `<repository-url>` with the repository's Git URL.
 
 ## Available scripts
 
