@@ -8,17 +8,18 @@ The project uses the VBB Transport API, validates external data at runtime, conv
 
 ## Current status
 
-Stage 7 is focused on the VBB radar integration. The current implementation includes:
+Stage 8 introduces the foundation for a separate Node.js backend while preserving the existing frontend behavior.
 
-- Strict TypeScript domain and VBB data types
-- Zod validation for untrusted radar responses
-- Mapping from VBB movements to application vehicles
-- A dedicated HTTP error model
-- Configurable radar URL construction
-- Optional request cancellation with `AbortSignal`
-- Unit tests for URL construction, successful responses, HTTP failures, signal forwarding, mapping, and invalid data
+The current implementation includes:
 
-The map interface, GraphQL API, live subscriptions, persistence, and analytics are planned for later stages.
+- An npm workspace for the backend under `server`
+- A separate backend package and TypeScript configuration
+- Independent backend build and start scripts
+- A minimal server using Node.js's built-in HTTP module
+- A JSON health response served on port `3001`
+- The existing tested VBB radar integration in the frontend
+
+The backend does not fetch VBB data yet, and the frontend does not communicate with it. Moving the VBB integration to the backend is planned for Stage 9. GraphQL, persistence, caching, authentication, and deployment infrastructure have not been introduced.
 
 ## Planned features
 
