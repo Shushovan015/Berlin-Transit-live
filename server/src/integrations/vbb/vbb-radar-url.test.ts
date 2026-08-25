@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildVbbRadarUrl } from "./vbb-radar-url";
+import { buildVbbRadarUrl } from "./vbb-radar-url.js";
 
 describe("buildVbbRadarUrl", () => {
     it("constructs the VBB radar URL with the supplied bounds", () => {

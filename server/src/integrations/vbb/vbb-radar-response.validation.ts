@@ -1,6 +1,6 @@
-import { untrustedVbbResponse } from "./vbb-response-boundary";
-import { vbbRadarResponseSchema } from "./vbb-radar-response.schema";
-import { invalidVbbRadarResponse } from "./vbb-radar-response.invalid-sample";
+import { untrustedVbbResponse } from "./vbb-response-boundary.js";
+import { vbbRadarResponseSchema } from "./vbb-radar-response.schema.js";
+import { invalidVbbRadarResponse } from "./vbb-radar-response.invalid-sample.js";
 
 export const vbbRadarResponseValidationResult = vbbRadarResponseSchema.safeParse(untrustedVbbResponse)
 

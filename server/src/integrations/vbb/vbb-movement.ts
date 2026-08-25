@@ -1,5 +1,5 @@
-import type { VbbLine } from "./vbb-line";
-import type { VbbLocation } from "./vbb-location";
+import type { VbbLine } from "./vbb-line.js";
+import type { VbbLocation } from "./vbb-location.js";
 
 export type VbbMovement = {
     readonly tripId: string;

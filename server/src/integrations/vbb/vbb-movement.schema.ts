@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { vbbLineSchema } from "./vbb-line.schema"
-import { vbbLocationSchema } from './vbb-location.schema';
+import { vbbLineSchema } from "./vbb-line.schema.js"
+import { vbbLocationSchema } from './vbb-location.schema.js';
 
 export const vbbMovementSchema = z.object({
     tripId: z.string().nonempty(),

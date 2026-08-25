@@ -1,9 +1,9 @@
-import type { VbbRadarBounds } from "./vbb-radar-bounds";
-import { buildVbbRadarUrl } from "./vbb-radar-url";
-import { VbbHttpError } from "./vbb-http-error";
-import type { TransitVehicle } from "../../features/vehicles/transit-vehicle";
-import { vbbRadarResponseSchema } from "./vbb-radar-response.schema";
-import { mapVbbMovementToTransitVehicle } from "./vbb-movement.mapper";
+import type { VbbRadarBounds } from "./vbb-radar-bounds.js";
+import { buildVbbRadarUrl } from "./vbb-radar-url.js";
+import { VbbHttpError } from "./vbb-http-error.js";
+import type { TransitVehicle } from "../../features/vehicles/transit-vehicle.js";
+import { vbbRadarResponseSchema } from "./vbb-radar-response.schema.js";
+import { mapVbbMovementToTransitVehicle } from "./vbb-movement.mapper.js";
 
 export async function fetchVbbRadarInput(bounds: VbbRadarBounds, signal?: AbortSignal): Promise<unknown> {
     const url = buildVbbRadarUrl(bounds);

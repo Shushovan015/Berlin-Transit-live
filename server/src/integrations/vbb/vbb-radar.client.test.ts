@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { fetchVbbRadarInput, fetchVbbVehicles } from "./vbb-radar.client";
-import { VbbHttpError } from "./vbb-http-error";
+import { fetchVbbRadarInput, fetchVbbVehicles } from "./vbb-radar.client.js";
+import { VbbHttpError } from "./vbb-http-error.js";
 import { ZodError } from "zod";
 
 afterEach(() => {

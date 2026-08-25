@@ -1,4 +1,4 @@
-import type { VbbRadarResponse } from './vbb-radar-response';
+import type { VbbRadarResponse } from './vbb-radar-response.js';
 
 export const vbbRadarResponseSample: VbbRadarResponse = {
     movements: [

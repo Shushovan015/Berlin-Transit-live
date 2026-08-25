@@ -1,9 +1,9 @@
-import type { TransitMode } from "../../features/vehicles/transit-mode";
-import type { VbbLine } from "./vbb-line";
-import type { VbbLocation } from "./vbb-location";
-import type { GeoPosition } from "../../features/vehicles/geo-position";
-import type { VbbMovement } from "./vbb-movement";
-import type { TransitVehicle } from "../../features/vehicles/transit-vehicle";
+import type { TransitMode } from "../../features/vehicles/transit-mode.js";
+import type { VbbLine } from "./vbb-line.js";
+import type { VbbLocation } from "./vbb-location.js";
+import type { GeoPosition } from "../../features/vehicles/geo-position.js";
+import type { VbbMovement } from "./vbb-movement.js";
+import type { TransitVehicle } from "../../features/vehicles/transit-vehicle.js";
 
 export const mapVbbProductToTransitMode = (product: VbbLine['product']): TransitMode => {
     switch (product) {

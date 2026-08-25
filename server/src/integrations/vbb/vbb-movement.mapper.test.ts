@@ -1,5 +1,5 @@
-import { mapVbbProductToTransitMode, mapVbbLocationToGeoPosition, mapVbbMovementToTransitVehicle } from "./vbb-movement.mapper";
-import type { VbbMovement } from "./vbb-movement";
+import { mapVbbProductToTransitMode, mapVbbLocationToGeoPosition, mapVbbMovementToTransitVehicle } from "./vbb-movement.mapper.js";
+import type { VbbMovement } from "./vbb-movement.js";
 import { describe, expect, it } from "vitest";
 
 describe("mapVbbProductToTransitMode", () => {

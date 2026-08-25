@@ -1,4 +1,4 @@
-import { vbbRadarResponseSample } from './vbb-radar-response.sample.ts';
+import { vbbRadarResponseSample } from './vbb-radar-response.sample.js';
 
 export const untrustedVbbResponse: unknown = vbbRadarResponseSample;
 

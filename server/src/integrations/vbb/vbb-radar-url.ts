@@ -1,4 +1,4 @@
-import type { VbbRadarBounds } from "./vbb-radar-bounds"
+import type { VbbRadarBounds } from "./vbb-radar-bounds.js"
 
 export function buildVbbRadarUrl(bounds: VbbRadarBounds): URL {
     const url = new URL("https://v6.vbb.transport.rest/radar");

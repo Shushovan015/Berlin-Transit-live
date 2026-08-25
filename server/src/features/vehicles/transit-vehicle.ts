@@ -1,5 +1,5 @@
-import type { TransitMode } from "./transit-mode";
-import type { GeoPosition } from "./geo-position";
+import type { TransitMode } from "./transit-mode.js";
+import type { GeoPosition } from "./geo-position.js";
 
 export type TransitVehicle = {
     readonly id: string;
