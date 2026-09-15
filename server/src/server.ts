@@ -1,11 +1,12 @@
 import { createServer } from "node:http";
+import { createYoga } from "graphql-yoga";
 
-const server = createServer((_request, response) => {
-    response.statusCode = 200;
-    response.setHeader("Content-Type", "application/json");
-    response.end(JSON.stringify({ status: "ok" }));
-});
+import { schema } from "./graphql/schema.js";
+
+const yoga = createYoga({ schema });
+
+const server = createServer(yoga);
 
 server.listen(3001, () => {
-    console.log("Server is listening on port 3001")
+  console.log("GraphQL server is listening at http://localhost:3001/graphql");
 });
