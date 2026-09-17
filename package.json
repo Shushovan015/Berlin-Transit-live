@@ -14,7 +14,8 @@
     "test": "vitest run",
     "server:build": "npm run build --workspace server",
     "server:start": "npm run start --workspace server",
-    "server:test": "npm run test --workspace server"
+    "server:test": "npm run test --workspace server",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

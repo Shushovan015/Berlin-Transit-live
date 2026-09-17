@@ -1,0 +1,11 @@
+query Vehicles {
+  vehicles {
+    id
+    lineName
+    mode
+    position {
+        latitude
+        longitude
+    }
+  }
+}
