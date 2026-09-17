@@ -29,6 +29,45 @@ describe("GraphQL schema", () => {
   });
 });
 
+describe("existing Vehicles", () => {
+  it("executes the vehicle query", async () => {
+    const yoga = createYoga({ schema });
+
+    const response = await yoga.fetch("http://yoga/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `query Vehicle($id: ID!){
+          vehicle(id: $id) {
+          id
+          lineName
+          mode
+        }
+      }`,
+        variables: {
+          id: "vehicle-u7-001",
+        },
+      }),
+    });
+
+    expect(response.status).toBe(200);
+
+    const body: unknown = await response.json();
+
+    expect(body).toEqual({
+      data: {
+        vehicle: {
+          id: "vehicle-u7-001",
+          lineName: "U7",
+          mode: "UBAHN",
+        },
+      },
+    });
+  });
+});
+
 describe("Vehicles", () => {
   it("executes the vehicle query", async () => {
     const yoga = createYoga({ schema });
@@ -75,6 +114,68 @@ describe("Vehicles", () => {
           position: null,
         }],
       },
+    });
+  });
+});
+
+describe("Missing Vehicles", () => {
+  it("executes the missing vehicle query", async () => {
+    const yoga = createYoga({ schema });
+
+    const response = await yoga.fetch("http://yoga/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `{
+          vehicle(id: "does-not-exist") {
+            id
+          }
+      }`,
+      }),
+    });
+
+    expect(response.status).toBe(200);
+
+    const body: unknown = await response.json();
+
+    expect(body).toEqual({
+      data: {
+        vehicle: null,
+      },
+    });
+  });
+});
+
+describe("Invalid Vehicles", () => {
+  it("returns an error when the required id argument is missing", async () => {
+    const yoga = createYoga({ schema });
+
+    const response = await yoga.fetch("http://yoga/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `{
+          vehicle {
+            id
+          }
+        }`,
+      }),
+    });
+
+    expect(response.status).toBe(200);
+
+    const body: unknown = await response.json();
+
+    expect(body).toMatchObject({
+      errors: [
+        {
+          message: expect.stringContaining("Argument"),
+        },
+      ],
     });
   });
 });
