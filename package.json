@@ -14,8 +14,8 @@
     "test": "vitest run",
     "server:build": "npm run build --workspace server",
     "server:start": "npm run start --workspace server",
-    "server:test": "npm run test --workspace server"
-
+    "server:test": "npm run test --workspace server",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
@@ -24,10 +24,15 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^7.4.1",
+    "@graphql-codegen/client-preset": "^6.2.0",
+    "@graphql-codegen/typescript-operations": "^6.1.6",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
+    "graphql": "^17.0.2",
     "oxlint": "^1.75.0",
     "typescript": "~6.0.2",
     "vite": "^8.2.0",

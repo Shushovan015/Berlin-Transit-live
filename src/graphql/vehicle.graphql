@@ -1,0 +1,11 @@
+query Vehicle($id: ID!) {
+  vehicle(id: $id) {
+    id
+    lineName
+    mode
+    position {
+        latitude
+        longitude
+    }
+  }
+}

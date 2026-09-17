@@ -6,33 +6,6 @@ The project uses the VBB Transport API, validates external data at runtime, conv
 
 > Vehicle positions supplied by VBB can be derived from schedules, route geometry, delays, and operational data. They should be understood as live estimates, not guaranteed GPS coordinates.
 
-## Current status
-
-Stage 8 introduces the foundation for a separate Node.js backend while preserving the existing frontend behavior.
-
-The current implementation includes:
-
-- An npm workspace for the backend under `server`
-- A separate backend package and TypeScript configuration
-- Independent backend build and start scripts
-- A minimal server using Node.js's built-in HTTP module
-- A JSON health response served on port `3001`
-- The existing tested VBB radar integration in the frontend
-
-The backend does not fetch VBB data yet, and the frontend does not communicate with it. Moving the VBB integration to the backend is planned for Stage 9. GraphQL, persistence, caching, authentication, and deployment infrastructure have not been introduced.
-
-## Planned features
-
-- Interactive Berlin map powered by OpenLayers
-- Estimated U-Bahn and S-Bahn vehicle positions
-- Filters by transport mode and line
-- Vehicle details including direction, delay, and update time
-- Station search and live departures
-- Service disruption and data-freshness indicators
-- Responsive desktop and mobile layouts
-- Live updates without full-page refreshes
-- Historical delay analysis in a later release
-
 ## Technology
 
 | Area | Technology |
